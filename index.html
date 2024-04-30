@@ -1,390 +1,891 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
-		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    <title>陶情瓷艺</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="meta description">
+    <title>陶瓷小馆</title>
+
+    <!--=== Favicon ===-->
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+
+    <!-- Google fonts include -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,900%7CYesteryear" rel="stylesheet">
+
+    <!-- All Vendor & plugins CSS include -->
+    <link href="assets/css/vendor.css" rel="stylesheet">
+    <!-- Main Style CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+<script src="/oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="/oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
 </head>
-<style>
-    body {
-      background:url("image/bg20.png")  0 / cover fixed;
-    }
-    .top {
-        width: 100%;
-        height: 200px;
-        background: #ffead3c6;
-        min-width:1100px;
-        
-    }
-    .top-logo {
-        float: left;
-        
-    }
-    .top-text {
-        float: left;
-    }
-    .logo {
-        width: 200px;
-        height: 200px;
-    }
-    @font-face {
-				font-family: mySecondFont;
-				src: url('王汉宗中魏碑简体-免費商用.TTF');
-			}
-    h1 {
-        font-family: mySecondFont;
-        font-size: 5em;
-        color: rgb(47, 139, 155);
-        margin-top: 80px;
-    }
-    .logo-go {
-        width: 40px;
-        height: 40px;
-    } 
-    .nav-item {
-        font-size: larger;
-    }
+
+<body >
     
-    .foot {
-      width: 100%;
-      height: 300px;
-      background: #e6e5e5dc;
-    }
-    
-    .foot-2 {
-      width: 50%;
-      height: 300px;
-      margin:auto;
-    }
-    .logo-foot {
-      width: 300px;
-      height: 300px;
-      
-
-    }
-    
-			.foot-p1 {
-				padding-left:30px;
-				padding-top: 15px;
-        color: black;
-        font-size:20px;
-        
-        
-			}
-
-			.foot-p2 {
-				padding-left:30px;
-        padding-top: 5px;
-        color: black;
-        font-size: 20px;
-        
-        
-			}
-      a {
-        text-decoration:none;
-      }
-      .arrow {
-				border: 9px solid transparent;
-				border-bottom-color: #eeffff;
-				width: 0px;
-				height: 0px;
-				top: 0px
-			}
-
-			.stick {
-				width: 8px;
-				height: 14px;
-				border-radius: 1px;
-				background-color: #ecfcff;
-				top: 15px;
-			}
-
-			#back_top div {
-				position: absolute;
-				margin: auto;
-				right: 0px;
-				left: 0px;
-			}
-
-			#back_top {
-				background-color: #67e3f7;
-				height: 38px;
-				width: 38px;
-				border-radius: 3px;
-				display: block;
-				cursor: pointer;
-				position: fixed;
-				right: 50px;
-				bottom: 100px;
-				display: none;
-				border-radius: 20px;
-			}
-      .ppp {
-        width: 80%;
-        height: 550px;
-        background: #f2e5dd;
-        margin: auto;
-        margin-top: 200px;
-        margin-bottom: 200px;
-        font-size: 20px;
-        padding: 50px;
-				background: #faf9f9d9;
-				border: 5px solid rgba(95, 182, 236, 0.847);
-        font-family: myFourthFont;
-      }
-      @font-face {
-				font-family: myFourthFont;
-				src: url('飞花宋体.TTF');
-			}
-</style>
-<body>
-    <div>
-        <div class="top">
-            <div class="top-logo">
-                <img src="image/陶情瓷艺_画板 1.png" class="logo">
-            </div>
-            <div class="top-text">
-                <h1>陶情瓷艺</h1>
-            </div>
-
-
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" style="float: right;margin: 80px 70px;">
-              登录
-            </button>
-          </div>
-          
-          <!-- 模态框 -->
-          <div class="modal" id="myModal" style="float: right;" >
-            <div class="modal-dialog">
-              <div class="modal-content">
-          
-                <!-- 模态框头部 -->
-                <div class="modal-header">
-                  <h4 class="modal-title">登录</h4>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-          
-                <!-- 模态框内容 -->
-                
-          
-                <div class="container mt-3">
-                 
-                  <form action="">
-                    <div class="mb-3 mt-3">
-                    <label for="email" class="form-label">邮箱:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    <!-- Start Header Area -->
+    <header class="header-area">
+        <!-- main header start -->
+        <div class="main-header d-none d-lg-block">
+            <!-- header top start -->
+            <div class="header-top bdr-bottom">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="welcome-message">
+                                <p>欢迎来到陶瓷小馆在线商店</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                    <label for="pwd" class="form-label">密码:</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
-                    </div>
-                    <div class="form-check mb-3">
-                    <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" name="remember"> 记住密码
-                    </label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">确认</button>
-                  </form>
                 </div>
-                
-                <!-- 模态框底部 -->
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
-                </div>
-          
-              </div>
             </div>
+            <!-- header top end -->
 
+            <!-- header middle area start -->
+            <div class="header-main-area sticky">
+                <div class="container">
+                    <div class="row align-items-center position-relative">
+
+                        <!-- start logo area -->
+                        <div class="col-lg-3">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="assets/img/logo/陶情瓷艺_画板 1.png" alt="" class="logo-top">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- start logo area -->
+
+                        <!-- main menu area start -->
+                        <div class="col-lg-6 position-static">
+                            <div class="main-menu-area">
+                                <div class="main-menu">
+                                    <!-- main menu navbar start -->
+                                    <nav class="desktop-menu">
+                                        <ul>
+											<li><a href="../首页/index.html">返回主页</a></li>
+                                            <li><a href="index.html">陶瓷小馆</a></li>
+                                        </ul>
+                                    </nav>
+                                    <!-- main menu navbar end -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- main menu area end -->
+
+                        <!-- mini cart area start -->
+                        <div class="col-lg-3">
+                            <div class="header-configure-wrapper">
+                                <div class="header-configure-area">
+                                    <ul class="nav justify-content-end">
+                                        <li>
+                                            <a href="#" class="offcanvas-btn">
+                                                <i class="lnr lnr-magnifier"></i>
+                                            </a>
+                                        </li>
+                                       
+                                        <li>
+                                            <a href="#">
+                                                <i class="lnr lnr-heart"></i>
+                                                <div class="notification">0</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="minicart-btn">
+                                                <i class="lnr lnr-cart"></i>
+                                                <div class="notification">2</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- mini cart area end -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- header middle area end -->
         </div>
+        <!-- main header start -->
 
-        
-        
-            <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="javascript:void(0)"><img src="image/陶情瓷艺_画板 1.png" class="logo-go"></a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>&nbsp;&nbsp;
-                  <div class="collapse navbar-collapse" id="mynavbar">
-                    <ul class="navbar-nav me-auto">
-                      <li class="nav-item">
-                        <a class="nav-link" href="index.html"><b>首页</b></a>
-                      </li>&nbsp;&nbsp;&nbsp;&nbsp;
-                      <li class="nav-item">
-                        <a class="nav-link" href="../历史脉络/index1.html"><b>历史脉络</b></a>
-                      </li>&nbsp;&nbsp;&nbsp;&nbsp;
-                      <li class="nav-item">
-                        <a class="nav-link" href="../品种功能/index2.html"><b>品种功能</b></a>
-                      </li>&nbsp;&nbsp;&nbsp;&nbsp;
-                      <li class="nav-item">
-                        <a class="nav-link" href="../文化延伸/index.html"><b>文化延伸</b></a>
-                      </li>&nbsp;&nbsp;&nbsp;&nbsp;
-                      <li class="nav-item">
-                        <a class="nav-link" href="../陶瓷小馆/index.html"><b>陶瓷小馆</b></a>
-                      </li>
-                    </ul>
-                    <form class="d-flex">
-                      <input class="form-control me-2" type="text" placeholder="搜索">
-                      <button class="btn btn-primary" type="button">Search</button>
+        <!-- mobile header start -->
+        <div class="mobile-header d-lg-none d-md-block sticky">
+            <!--mobile header top start -->
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="mobile-main-header">
+                            <div class="mobile-logo">
+                                <a href="index.html">
+                                    <img src="assets/img/logo/陶情瓷艺_画板 1.png" alt="Brand Logo">
+                                </a>
+                            </div>
+                            <div class="mobile-menu-toggler">
+                                <div class="mini-cart-wrap">
+                                    <a href="#">
+                                        <i class="lnr lnr-cart"></i>
+                                    </a>
+                                </div>
+                                <div class="mobile-menu-btn">
+                                    <div class="off-canvas-btn">
+                                        <i class="lnr lnr-menu"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- mobile header top start -->
+        </div>
+        <!-- mobile header end -->
+    </header>
+    <!-- end Header Area -->
+
+    <!-- off-canvas menu start -->
+    <aside class="off-canvas-wrapper">
+        <div class="off-canvas-overlay"></div>
+        <div class="off-canvas-inner-content">
+            <div class="btn-close-off-canvas">
+                <i class="lnr lnr-cross"></i>
+            </div>
+
+            <div class="off-canvas-inner">
+                <!-- search box start -->
+                <div class="search-box-offcanvas">
+                    <form>
+                        <input type="text" placeholder=".">
+                        <button class="search-btn"><i class="lnr lnr-magnifier"></i></button>
                     </form>
-                  </div>
                 </div>
-              </nav>
-              
-              <div style="max-width:1500px; margin:0 auto;min-width:1400px;">
-              <div id="demo" class="carousel slide" data-bs-ride="carousel" style="width: 80%;height: 550px;margin: 0 auto;box-shadow: 15px 14px 10px#362b24;">
+                <!-- search box end -->
 
-                <!-- Indicators/dots -->
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                  <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                  <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                <!-- mobile menu start -->
+                <div class="mobile-navigation">
+
+                    <!-- mobile menu navigation start -->
+                    <nav>
+                        <ul class="mobile-menu">
+							<li><a href="/">回到主页</a></li>
+                            <li><a href="index.html">小馆首页</a></li>
+                        </ul>
+                    </nav>
+                    <!-- mobile menu navigation end -->
                 </div>
+                <!-- mobile menu end -->
+
                 
-                <!-- The slideshow/carousel -->
-                <div class="carousel-inner">
-                  <div class="carousel-item active" style="height: 550px;">
-                    <img src="image/top-13.jpg" class="d-block" style="width:100%;height: 550px;">
-                    
-                  </div>
-                  <div class="carousel-item" style="height: 550px;">
-                    <img src="image/top-17.jpg" class="d-block" style="width:100%;height: 550px;">
-                    
-                  </div>
-                  <div class="carousel-item" style="height: 550px;">
-                    <img src="image/top-15.jpg" class="d-block" style="width:100%;height: 550px;">
-                    
-                  </div>
+
+                <!-- offcanvas widget area start -->
+                <div class="offcanvas-widget-area">
+                    <div class="off-canvas-social-widget">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                    </div>
                 </div>
-                
-                <!-- Left and right controls/icons -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-                  <span class="carousel-control-next-icon"></span>
-                </button>
-              </div>
+                <!-- offcanvas widget area end -->
+            </div>
+        </div>
+    </aside>
+    <!-- off-canvas menu end -->
 
 
-              <div class="ppp">
-                <h2><b>陶瓷</b></h2>
-                <br>
-                <p> 
-                  <p>陶瓷是一种由粘土、长石、石英等原料制成的物品，是陶器和瓷器的总称。</p>
-                  <p>中国是享誉世界的文明古国,在漫长的历史进程中,创造了丰富灿烂的物质和精神文化,陶瓷堪称其中最杰出的代表之一。</p>
-                  
-                 <p>陶瓷一直都是中国的代表，也只有陶瓷可以这么毫无争议的代表中国。
-                  中国的发展，中国的繁荣昌盛，是通过对陶瓷的研究，可以反映出当时的历史文化。
-                  瓷器上的花纹可以告诉我们很多信息，
-                  比如社会的状况、人民是否安居乐业、当时统治者的兴趣爱好，小小的瓷器背后就存在着许许多多的信息，
-                  我们通过这些可以看到中国几千年的变化，看到了当时的社会，也看到了我们祖先烧制陶瓷的高超技术，
-                  每一件瓷器上的图案都栩栩如生，每次看到瓷器上的图案都会有种莫名的震撼，
-                  图案不仅优美还有一种清新淡雅的感觉。让人觉得每一件瓷器都是有灵魂的，
-                  仿佛它们在告诉我们发生在它身上的故事，告诉我们这几千年来中国发生的事。</p>
-                </p>
-              </div>
 
-              <div style="width: 100%;margin: auto;">
-              <div class="container mt-3" style="width: 80%;height: 500px;margin-bottom: 20PX;">
-                <div class="card" style="width:30%;float: left;margin-left: 2%;">
-                  <img class="card-img-top" src="image\斗彩花蝶纹灯笼瓶.jpeg" alt="Card image" style="width:100%;height: 350px;">
-                  <div class="card-body" style="height: 150px;">
-                    <h5 class="card-title"><b>斗彩花蝶纹灯笼瓶</b></h5><br>
-                    <a href="https://www.shobserver.com/zaker/html/151181.html" class="btn btn-primary">查看更多</a>
-                  </div>
+    <!-- main wrapper start -->
+    <main>
+        <!-- slider area start -->
+        <section class="slider-area">
+            <div class="hero-slider-active slick-arrow-style slick-arrow-style_hero slick-dot-style">
+                <!-- single slider item start -->
+                <div class="hero-single-slide ">
+                    <div class="hero-slider-item bg-img" data-bg="assets/img/slider/top-1.jpg">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="hero-slider-content slide-1">
+                                        <h1>陶艺醉古今</h1>
+                                        <h2>创意名天下</h2>
+                                        <a href="shop.html" class="btn-hero">点击收藏</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card" style="width:30%;float: left;margin-left: 3%;">
-                  <img class="card-img-top" src="image\元青白釉玉壶春瓶.jpg" alt="Card image" style="width:100%;height: 350px;">
-                  <div class="card-body" style="height: 150px;">
-                    <h5 class="card-title"><b>元青白釉玉壶春瓶</b></h5><br>
-                    <a href="http://k.sina.com.cn/article_6526235802_184fe749a001009ajj.html?cre=techpagepc&mod=f&loc=4&r=9&doct=0&rfunc=100" class="btn btn-primary">查看更多</a>
-                  </div>
+                <!-- single slider item end -->
+
+                <!-- single slider item start -->
+                <div class="hero-single-slide">
+                    <div class="hero-slider-item bg-img" data-bg="assets/img/slider/top-3.jpg">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="hero-slider-content slide-2">
+                                        
+                                        <h1>千年艺匠心</h1>
+                                        <h2>万家瓷尚情</h2>
+                                        <a href="shop.html" class="btn-hero">点击收藏</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card" style="width:30%;float: left;margin-left: 3%;">
-                  <img class="card-img-top" src="image\曲折纹带流陶壶.jpeg" alt="Card image" style="width:100%;height: 350px;">
-                  <div class="card-body" style="height: 150px;">
-                    <h5 class="card-title"><b>曲折纹带流陶壶</b> </h5><br>
-                    <a href="https://history.sohu.com/a/566373000_121124744" class="btn btn-primary">查看更多</a>
-                  </div>
+                <!-- single slider item start -->
+            </div>
+        </section>
+        <!-- slider area end -->
+
+        <!-- banner statistics start -->
+        <section class="banner-statistics section-space">
+            <div class="container">
+                <div class="row mbn-30">
+                    <!-- start store item -->
+                    <div class="col-md-4">
+                        <div class="banner-item mb-30">
+                            <figure class="banner-thumb">
+                                <a href="#">
+                                    <img src="assets/img/banner/日用陶瓷.jpg" alt="" style="height: 300px;">
+                                </a>
+                                <figcaption class="banner-content">
+                                    <h2 class="text1">日用陶瓷</h2>
+                                    <a class="store-link" href="#">购买</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <!-- start store item -->
+
+                    <!-- start store item -->
+                    <div class="col-md-4">
+                        <div class="banner-item mb-30">
+                            <figure class="banner-thumb">
+                                <a href="#">
+                                    <img src="assets/img/banner/艺术陶瓷.jpg" alt="" style="height: 300px;">
+                                </a>
+                                <figcaption class="banner-content text-center">
+                                    <h2 class="text1">艺术陶瓷</h2>
+                                    <a class="store-link" href="#">购买</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <!-- start store item -->
+
+                    <!-- start store item -->
+                    <div class="col-md-4">
+                        <div class="banner-item mb-30">
+                            <figure class="banner-thumb">
+                                <a href="#">
+                                    <img src="assets/img/banner/电器陶瓷.jpg" alt="" style="height: 300px;">
+                                </a>
+                                <figcaption class="banner-content">
+                                    <h2 class="text1">电器陶瓷</h2>
+                                    <a class="store-link" href="#">购买</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <!-- start store item -->
                 </div>
-                
-              </div>
-              <div class="container mt-3" style="width: 80%;height: 500px;margin-bottom: 200PX;">
-                  <div class="card" style="width:30%;float: left;margin-left: 2%;">
-                    <img class="card-img-top" src="image/宋白釉堆塑蟠龙纹带盖瓷瓶.png" alt="Card image" style="width:100%;height: 350px;">
-                    <div class="card-body" style="height: 150px;">
-                      <h5 class="card-title"><b>宋白釉堆塑蟠龙纹带盖瓷瓶</b></h5><br>
-                      <a href="http://wwj.wlt.fujian.gov.cn/wwzy/wwxc/202103/t20210301_5542429.htm" class="btn btn-primary">查看更多</a>
+            </div>
+        </section>
+        <!-- banner statistics end -->
+
+        <!-- service policy start -->
+        <section class="service-policy-area section-space p-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <!-- start policy single item -->
+                        <div class="service-policy-item">
+                            <div class="icons">
+                                <img src="assets/img/icon/free_shipping.png" alt="">
+                            </div>
+                            <div class="policy-terms">
+                                <h5>免费送货</h5>
+                                <p>所有订单免运费</p>
+                            </div>
+                        </div>
+                        <!-- end policy single item -->
                     </div>
-                  </div>
-                  <div class="card" style="width:30%;float: left;margin-left: 3%;">
-                    <img class="card-img-top" src="image\粉彩扒花卷草纹花卉蝴蝶胆瓶.webp" alt="Card image" style="width:100%;height: 350px;">
-                    <div class="card-body" style="height: 150px;">
-                      <h5 class="card-title"><b>粉彩扒花卷草纹花卉蝴蝶胆瓶</b></h5><br>
-                      <a href="https://www.xiaohongshu.com/explore/619b09740000000021036e48" class="btn btn-primary">查看更多</a>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <!-- start policy single item -->
+                        <div class="service-policy-item">
+                            <div class="icons">
+                                <img src="assets/img/icon/support247.png" alt="">
+                            </div>
+                            <div class="policy-terms">
+                                <h5>24小时服务</h5>
+                                <p>全天24小时提供服务</p>
+                            </div>
+                        </div>
+                        <!-- end policy single item -->
                     </div>
-                  </div>
-                  <div class="card" style="width:30%;float: left;margin-left: 3%;">
-                    <img class="card-img-top" src="image\唐三彩鱼尊.jpeg" alt="Card image" style="width:100%;height: 350px;">
-                    <div class="card-body" style="height: 150px;">
-                      <h5 class="card-title"><b>唐三彩鱼尊</b> </h5><br>
-                      <a href="https://www.sohu.com/a/320693140_651622" class="btn btn-primary">查看更多</a>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <!-- start policy single item -->
+                        <div class="service-policy-item">
+                            <div class="icons">
+                                <img src="assets/img/icon/money_back.png" alt="">
+                            </div>
+                            <div class="policy-terms">
+                                <h5>退款退货</h5>
+                                <p>30天免费退款退货</p>
+                            </div>
+                        </div>
+                        <!-- end policy single item -->
                     </div>
-                  </div>
-              </div>
-              
-              <div class="foot">
-                <div class="foot-2" align="center">
-                  <div class="foot-2-1" style="float: left;">
-                    <img src="image/陶情瓷艺_画板 1.png" class="logo-foot">
-                  </div>
-                  <div class="foot-2-2" style="float: right;padding-top: 110px;">
-                    <div style="float: left;">
-                      <a href="##">
-                        <p class="foot-p1"><b>联系我们</b></p>
-                      </a>
-                      <a href="##">
-                        <p class="foot-p2"><b>帮助中心</b></p>
-                      </a>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <!-- start policy single item -->
+                        <div class="service-policy-item">
+                            <div class="icons">
+                                <img src="assets/img/icon/promotions.png" alt="">
+                            </div>
+                            <div class="policy-terms">
+                                <h5>订单折扣</h5>
+                                <p>会员享受订单折扣优惠</p>
+                            </div>
+                        </div>
+                        <!-- end policy single item -->
                     </div>
-                    <div style="float: left">
-                      <a href="##">
-                        <p class="foot-p1"><b>投诉中心</b></p>
-                      </a>
-                      <a href="##">
-                        <p class="foot-p2"><b>空间协议</b></p>
-                      </a>
-                    </div>
-                  </div>
                 </div>
-              </div>
-              <div id="back_top">
-                <div class="arrow"></div>
-                <div class="stick"></div>
-              </div>
-              </div>
-              <script>
-                $(function() {
-                  $(window).scroll(function() {
-                    var scrollt = document.documentElement.scrollTop + document.body.scrollTop;
-                    if (scrollt > 200) {
-                      $("#back_top").fadeIn(400);
-                    } else {
-                      $("#back_top").stop().fadeOut(400);
-                    }
-                  });
-                  $("#back_top").click(function() {
-                    $("html,body").animate({
-                      scrollTop: "0px"
-                    }, 200);
-                  });
-                });
-              </script>
+            </div>
+        </section>
+        <!-- service policy end -->
+
+        <!-- our product area start -->
+        <section class="our-product section-space">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title text-center">
+                            <h2>新产品</h2>
+                            <p>新品上市，欢迎选购！</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mtn-40">
+                    <!-- product single item start -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="product-item mt-40">
+                            <figure class="product-thumb">
+                                <a href="product-details.html">
+                                    <img class="pri-img" src="assets/img/product/白瓷花瓶.webp" alt="product" style="height: 200px">
+                                    <img class="sec-img" src="assets/img/product/白瓷花瓶.webp" alt="product" style="height: 200px">
+                                </a>
+								
+                                <div class="button-group">
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="添加到心愿单"><i class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="快速查看"><i class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="添加到购物车"><i class="lnr lnr-cart"></i></a>
+                                </div>
+                            </figure>
+                            <div class="product-caption">
+                                <p class="product-name">
+                                    <a href="product-details.html">白瓷花瓶</a>
+                                </p>
+                                <div class="price-box">
+                                    <span class="price-regular">¥150.00</span>
+                                    <span class="price-old"><del>¥188.00</del></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- product single item end -->
+
+                    <!-- product single item start -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="product-item mt-40">
+                            <figure class="product-thumb">
+                                <a href="product-details.html">
+                                    <img class="pri-img" src="assets/img/product/仿古陶瓷酒具.jpg" alt="product" style="height: 200px">
+                                    <img class="sec-img" src="assets/img/product/仿古陶瓷酒具.jpg" alt="product" style="height: 200px">
+                                </a>
+                               
+                                <div class="button-group">
+                                     <a href="#" data-toggle="tooltip" data-placement="left" title="添加到心愿单"><i class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="快速查看"><i class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="添加到购物车"><i class="lnr lnr-cart"></i></a>
+                                </div>
+                            </figure>
+                            <div class="product-caption">
+                                <p class="product-name">
+                                    <a href="product-details.html">仿古陶瓷酒具</a>
+                                </p>
+                                <div class="price-box">
+                                    <span class="price-regular">¥240.00</span>
+                                    <span class="price-old"><del>¥360.00</del></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- product single item end -->
+
+                    <!-- product single item start -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="product-item mt-40">
+                            <figure class="product-thumb">
+                                <a href="product-details.html">
+                                    <img class="pri-img" src="assets/img/product/陶瓷碟子.jpg" alt="product" style="height: 200px">
+                                    <img class="sec-img" src="assets/img/product/陶瓷碟子.jpg" alt="product" style="height: 200px">
+                                </a>
+                                <div class="button-group">
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="添加到心愿单"><i class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="快速查看"><i class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="添加到购物车"><i class="lnr lnr-cart"></i></a>
+                                </div>
+                            </figure>
+                            <div class="product-caption">
+                                <p class="product-name">
+                                    <a href="product-details.html">陶瓷碟子</a>
+                                </p>
+                                <div class="price-box">
+                                    <span class="price-regular">¥49.00</span>
+                                    <span class="price-old"><del>¥80.00</del></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- product single item end -->
+
+                    <!-- product single item start -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="product-item mt-40">
+                            <figure class="product-thumb">
+                                <a href="product-details.html">
+                                    <img class="pri-img" src="assets/img/product/景德镇陶瓷茶具.webp" alt="product" style="height: 200px">
+                                    <img class="sec-img" src="assets/img/product/景德镇陶瓷茶具.webp" alt="product" style="height: 200px">
+                                </a>
+                                <div class="button-group">
+                                     <a href="#" data-toggle="tooltip" data-placement="left" title="添加到心愿单"><i class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="快速查看"><i class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="添加到购物车"><i class="lnr lnr-cart"></i></a>
+                                </div>
+                            </figure>
+                            <div class="product-caption">
+                                <p class="product-name">
+                                    <a href="product-details.html">景德镇青瓷茶具</a>
+                                </p>
+                                <div class="price-box">
+                                    <span class="price-regular">¥330.00</span>
+                                    <span class="price-old"><del>¥455.00</del></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- product single item end -->
+
+                    <!-- product single item start -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="product-item mt-40">
+                            <figure class="product-thumb">
+                                <a href="product-details.html">
+                                    <img class="pri-img" src="assets/img/product/裂冰瓷釉茶杯.webp" alt="product" style="height: 200px">
+                                    <img class="sec-img" src="assets/img/product/裂冰瓷釉茶杯.webp" alt="product" style="height: 200px">
+                                </a>
+                                <div class="button-group">
+                                     <a href="#" data-toggle="tooltip" data-placement="left" title="添加到心愿单"><i class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="快速查看"><i class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="添加到购物车"><i class="lnr lnr-cart"></i></a>
+                                </div>
+                            </figure>
+                            <div class="product-caption">
+                                <p class="product-name">
+                                    <a href="/">裂冰瓷釉茶杯</a>
+                                </p>
+                                <div class="price-box">
+                                    <span class="price-regular">¥80.00</span>
+                                    <span class="price-old"><del>¥90.00</del></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- product single item end -->
+
+                    <!-- product single item start -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="product-item mt-40">
+                            <figure class="product-thumb">
+                                <a href="product-details.html">
+                                    <img class="pri-img" src="assets/img/product/青花华卉壶.JPG" alt="product" style="height: 200px">
+                                    <img class="sec-img" src="assets/img/product/青花华卉壶.JPG" alt="product" style="height: 200px">
+                                </a>
+                                <div class="button-group">
+                                     <a href="#" data-toggle="tooltip" data-placement="left" title="添加到心愿单"><i class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="快速查看"><i class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="添加到购物车"><i class="lnr lnr-cart"></i></a>
+                                </div>
+                            </figure>
+                            <div class="product-caption">
+                                <p class="product-name">
+                                    <a href="product-details.html">青花华卉壶</a>
+                                </p>
+                                <div class="price-box">
+                                    <span class="price-regular">¥299.00</span>
+                                    <span class="price-old"><del>¥340.00</del></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- product single item end -->
+
+                    <!-- product single item start -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="product-item mt-40">
+                            <figure class="product-thumb">
+                                <a href="product-details.html">
+                                    <img class="pri-img" src="assets/img/product/复古中式无釉裸烧茶壶.webp" alt="product" style="height: 200px">
+                                    <img class="sec-img" src="assets/img/product/复古中式无釉裸烧茶壶.webp" alt="product" style="height: 200px">
+                                </a>
+                                <div class="button-group">
+                                     <a href="#" data-toggle="tooltip" data-placement="left" title="添加到心愿单"><i class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="快速查看"><i class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="添加到购物车"><i class="lnr lnr-cart"></i></a>
+                                </div>
+                            </figure>
+                            <div class="product-caption">
+                                <p class="product-name">
+                                    <a href="product-details.html">复古中式无釉裸烧茶壶</a>
+                                </p>
+                                <div class="price-box">
+                                    <span class="price-regular">¥550.00</span>
+                                    <span class="price-old"><del>¥680.00</del></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- product single item end -->
+
+                    <!-- product single item start -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="product-item mt-40">
+                            <figure class="product-thumb">
+                                <a href="product-details.html">
+                                    <img class="pri-img" src="assets/img/product/哥窑斗笠盏.webp" alt="product" style="height: 200px">
+                                    <img class="sec-img" src="assets/img/product/哥窑斗笠盏.webp" alt="product" style="height: 200px">
+                                </a>
+                                <div class="button-group">
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="添加到心愿单"><i class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="快速查看"><i class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="添加到购物车"><i class="lnr lnr-cart"></i></a>
+                                </div>
+                            </figure>
+                            <div class="product-caption">
+                                <p class="product-name">
+                                    <a href="product-details.html">哥窑斗笠盏</a>
+                                </p>
+                                <div class="price-box">
+                                    <span class="price-regular">¥120.00</span>
+                                    <span class="price-old"><del>¥170.00</del></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- product single item end -->
+
+                    <div class="col-12">
+                        <div class="view-more-btn">
+                            <a class="btn-hero btn-load-more" href="#">更多新品</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- our product area end -->
+
+        <!-- banner statistics start -->
+        <section class="banner-statistics-right">
+            <div class="container">
+                <div class="row">
+                    <!-- start banner item start -->
+                    <div class="col-md-6">
+                        <div class="banner-item banner-border">
+                            <figure class="banner-thumb">
+                                <a href="#">
+                                    <img src="assets/img/banner/有釉陶瓷.webp" alt="" style="height: 350px">
+                                </a>
+                                <figcaption class="banner-content banner-content-right">
+                                    <h2 class="text1">有釉陶瓷</h2>
+                                    
+                                    <a class="store-link" href="#">点击购买</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <!-- start banner item end -->
+
+                    <!-- start banner item start -->
+                    <div class="col-md-6">
+                        <div class="banner-item banner-border">
+                            <figure class="banner-thumb">
+                                <a href="#">
+                                    <img src="assets/img/banner/无釉陶瓷3.webp" alt="" style="height: 350px">
+                                </a>
+                                <figcaption class="banner-content banner-content-right">
+                                    <h2 class="text1">茶具套装</h2>
+                                    
+                                    <a class="store-link" href="#">点击购买</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <!-- start banner item end -->
+                </div>
+            </div>
+        </section>
+        <!-- banner statistics end -->
+
+        <!-- trending product area start -->
+        <section class="top-sellers section-space">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title text-center">
+                            <h2>畅销商品</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="product-carousel--4 slick-row-15 slick-sm-row-10 slick-arrow-style">
+                            <!-- product single item start -->
+                            <div class="product-item">
+                                <figure class="product-thumb">
+                                    <a href="product-details.html">
+                                        <img class="pri-img" src="assets/img/product/创意陶瓷摆件猫头鹰.jpg" alt="product" style="height: 180px">
+                                        <img class="sec-img" src="assets/img/product/创意陶瓷摆件猫头鹰.jpg" alt="product" style="height: 180px">
+                                        <img class="sec-img" src="assets/img/product/创意陶瓷摆件猫头鹰.jpg" alt="product" style="height: 180px">
+                                    </a>
+                                    <div class="button-group">
+                                        <a href="#" data-toggle="tooltip" data-placement="left" title="添加到心愿单"><i class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="快速查看"><i class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="添加到购物车"><i class="lnr lnr-cart"></i></a>
+                                    </div>
+                                </figure>
+                                <div class="product-caption">
+                                    <p class="product-name">
+                                        <a href="product-details.html">创意陶瓷摆件猫头鹰</a>
+                                    </p>
+                                    <div class="price-box">
+                                        <span class="price-regular">¥39.00</span>
+                                        <span class="price-old"><del>¥50.00</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product single item end -->
+
+                            <!-- product single item start -->
+                            <div class="product-item">
+                                <figure class="product-thumb">
+                                    <a href="product-details.html">
+                                        <img class="pri-img" src="assets/img/product/陶瓷马克杯.webp" alt="product" style="height: 180px">
+                                        <img class="sec-img" src="assets/img/product/陶瓷马克杯.webp" alt="product" style="height: 180px">
+                                    </a>
+                                    <div class="button-group">
+                                        <a href="#" data-toggle="tooltip" data-placement="left" title="添加到心愿单"><i class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="快速查看"><i class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="添加到购物车"><i class="lnr lnr-cart"></i></a>
+                                    </div>
+                                </figure>
+                                <div class="product-caption">
+                                    <p class="product-name">
+                                        <a href="product-details.html">陶瓷马克杯</a>
+                                    </p>
+                                    <div class="price-box">
+                                        <span class="price-regular">¥55.00</span>
+                                        <span class="price-old"><del>¥80.00</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product single item end -->
+
+                            <!-- product single item start -->
+                            <div class="product-item">
+                                <figure class="product-thumb">
+                                    <a href="product-details.html">
+                                        <img class="pri-img" src="assets/img/product/陶瓷花瓶.webp" alt="product" style="height: 180px">
+                                        <img class="sec-img" src="assets/img/product/陶瓷花瓶.webp" alt="product" style="height: 180px">
+                                    </a>
+                                    <div class="button-group">
+                                         <a href="#" data-toggle="tooltip" data-placement="left" title="添加到心愿单"><i class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="快速查看"><i class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="添加到购物车"><i class="lnr lnr-cart"></i></a>
+                                    </div>
+                                </figure>
+                                <div class="product-caption">
+                                    <p class="product-name">
+                                        <a href="product-details.html">陶瓷花瓶</a>
+                                    </p>
+                                    <div class="price-box">
+                                        <span class="price-regular">¥108.00</span>
+                                        <span class="price-old"><del>¥155.00</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product single item end -->
+
+                            <!-- product single item start -->
+                            <div class="product-item">
+                                <figure class="product-thumb">
+                                    <a href="product-details.html">
+                                        <img class="pri-img" src="assets/img/product/陶瓷茶具.webp" alt="product" style="height: 180px">
+                                        <img class="sec-img" src="assets/img/product/陶瓷茶具.webp" alt="product" style="height: 180px">
+                                    </a>
+                                    <div class="button-group">
+                                         <a href="#" data-toggle="tooltip" data-placement="left" title="添加到心愿单"><i class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="快速查看"><i class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="添加到购物车"><i class="lnr lnr-cart"></i></a>
+                                    </div>
+                                </figure>
+                                <div class="product-caption">
+                                    <p class="product-name">
+                                        <a href="\">陶瓷茶具</a>
+                                    </p>
+                                    <div class="price-box">
+                                        <span class="price-regular">¥330.00</span>
+                                        <span class="price-old"><del>¥555.00</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product single item end -->
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- trending product area end -->
+
+        <!-- Instagram Feed Area Start -->
+        <div class="instagram-feed-area">
+            <div class="instagram-feed-thumb">
+                <div id="instafeed" class="instagram-carousel" data-userid="6666969077" data-accesstoken="6666969077.1677ed0.d325f406d94c4dfab939137c5c2cc6c2">
+                </div>
+            </div>
+        </div>
+        <!-- Instagram Feed Area End -->
+
+    </main>
+    <!-- main wrapper end -->
+
+
+    <!-- offcanvas search form start -->
+    <div class="offcanvas-search-wrapper">
+        <div class="offcanvas-search-inner">
+            <div class="offcanvas-close">
+                <i class="lnr lnr-cross"></i>
+            </div>
+            <div class="container">
+                <div class="offcanvas-search-box">
+                    <form class="d-flex bdr-bottom w-100">
+                        <input type="text" placeholder="从这里开始搜素">
+                        <button class="search-btn"><i class="lnr lnr-magnifier"></i>搜索</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- offcanvas search form end -->
+
+    <!-- offcanvas mini cart start -->
+    <div class="offcanvas-minicart-wrapper">
+        <div class="minicart-inner">
+            <div class="offcanvas-overlay"></div>
+            <div class="minicart-inner-content">
+                <div class="minicart-close">
+                    <i class="lnr lnr-cross"></i>
+                </div>
+                <div class="minicart-content-box">
+                    <div class="minicart-item-wrapper">
+                        <ul>
+                            <li class="minicart-item">
+                                <div class="minicart-thumb">
+                                    <a href="product-details.html">
+                                        <img src="assets/img/product/陶瓷小猫.webp" alt="product">
+                                    </a>
+                                </div>
+                                <div class="minicart-content">
+                                    <h3 class="product-name">
+                                        <a href="/">陶瓷小猫摆件</a>
+                                    </h3>
+                                    <p>
+                                        <span class="cart-quantity">1 <strong>&times;</strong></span>
+                                        <span class="cart-price">¥80.00</span>
+                                    </p>
+                                </div>
+                                <button class="minicart-remove"><i class="lnr lnr-cross"></i></button>
+                            </li>
+                            <li class="minicart-item">
+                                <div class="minicart-thumb">
+                                    <a href="product-details.html">
+                                        <img src="assets/img/product/陶瓷开片盖碗茶杯.webp" alt="product">
+                                    </a>
+                                </div>
+                                <div class="minicart-content">
+                                    <h3 class="product-name">
+                                        <a href="product-details.html">陶瓷开片盖碗茶杯</a>
+                                    </h3>
+                                    <p>
+                                        <span class="cart-quantity">1 <strong>&times;</strong></span>
+                                        <span class="cart-price">¥130.00</span>
+                                    </p>
+                                </div>
+                                <button class="minicart-remove"><i class="lnr lnr-cross"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="minicart-pricing-box">
+                        <ul>
+                            <li>
+                                <span>应付</span>
+                                <span><strong>¥245.00</strong></span>
+                            </li>
+                            <li>
+                                <span>优惠</span>
+                                <span><strong>¥35.00</strong></span>
+                            </li>
+                            <li>
+                                <span>运费</span>
+                                <span><strong>¥10.00</strong></span>
+                            </li>
+                            <li class="total">
+                                <span>共计</span>
+                                <span><strong>¥220.00</strong></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="minicart-button">
+                        <a href="#"><i class="fa fa-shopping-cart"></i> 购买</a>
+                        <a href="#"><i class="fa fa-share"></i> 返回</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- offcanvas mini cart end -->
+
+    <!-- Scroll to top start -->
+    <div class="scroll-top not-visible">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <!-- Scroll to Top End -->
+
+    <!-- All vendor & plugins & active js include here -->
+    <!--All Vendor Js -->
+    <script src="assets/js/vendor.js"></script>
+    <!-- Active Js -->
+    <script src="assets/js/active.js"></script>
 </body>
+
 </html>

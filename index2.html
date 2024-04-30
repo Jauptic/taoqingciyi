@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>品种功能</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<style>
+			.margin-atuo {
+				margin: 0 auto;
+			}
+
+			body,
+			main::before {
+				background: url("./img2/ditu2.jpg") 0 / cover fixed;
+			}
+
+			main {
+				position: relative;
+				margin: 0 auto;
+				padding: 1em;
+				width: 65%;
+				background: hsla(0, 0%, 100%, .25) border-box;
+				overflow: hidden;
+				border-radius: .3em;
+				box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .3) inset,
+					0 .5em 1em rgba(0, 0, 0, 0.6);
+				text-shadow: 0 1px 1px hsla(0, 0%, 100%, .3);
+			}
+
+			main::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: -30px;
+				z-index: -1;
+				-webkit-filter: blur(20px);
+				filter: blur(20px);
+			}
+
+			blockquote {
+				font-style: italic;
+				font-size: 18px;
+			}
+
+			blockquote cite {
+				font-style: normal;
+			}
+
+			.box1,
+			.box2,
+			.box3,
+			.box4,
+			.box5,
+			.box6 {
+				position: relative;
+				width: 300px;
+				height: 300px;
+				color: #2e2d31;
+				background: #131313;
+				overflow: hidden;
+				border-radius: 20px;
+			}
+
+			.imgg {
+
+				font-weight: bold;
+				font-size: 24px;
+				padding: 0px 0px;
+				color: #f8f8f8;
+			}
+
+			.img1,
+			.img2,
+			.img3,
+			.img4,
+			.img5,
+			.img6 {
+				width: 300px;
+				height: 300px;
+			}
+
+			.text1_title,
+			.text2_title,
+			.text3_title,
+			.text4_title,
+			.text5_title,
+			.text6_title {
+				font-size: 30px;
+				font-family: mySecondFont;
+			}
+
+			.text1,
+			.text2,
+			.text3,
+			.text4,
+			.text5,
+			.text6 {
+				position: absolute;
+				left: 0;
+				width: 100%;
+				padding: 20px;
+				background: rgba(247, 247, 247, 0.744);
+				border-top-left-radius: 20px;
+				transform: translateY(150px);
+				transition: transform .25s;
+				height: 280px;
+				bottom: -20px;
+			}
+
+			/* .text1 {bottom: -20px;}
+            .text2 {bottom: -55px;}
+            .text3 {bottom: -10px;}
+            .text4 {bottom: -17px;}
+            .text5 {bottom: -10px;}
+            .text6 {bottom: -25px;} */
+			.text1::before,
+			.text2::before,
+			.text3::before,
+			.text4::before,
+			.text5::before,
+			.text6::before {
+				content: '';
+				position: absolute;
+				top: -47px;
+				right: -45px;
+				width: 100px;
+				height: 100px;
+				transform: rotate(-175deg);
+				border-radius: 50%;
+				box-shadow: inset 48px 48px #f2f2f2;
+			}
+
+			.text1_title,
+			.text2_title,
+			.text3_title,
+			.text4_title,
+			.text5_title,
+			.text6_title {
+				color: #131313;
+				line-height: 15px;
+			}
+
+			.card_subtitle,
+			.card2_subtitle,
+			.card3_subtitle,
+			.card4_subtitle,
+			.card5_subtitle,
+			.card6_subtitle {
+				display: block;
+				font-size: 12px;
+				margin-bottom: 10px;
+			}
+
+			.card_description,
+			.card2_description,
+			.card3_description,
+			.card4_description,
+			.card5_description,
+			.card6_description {
+				font-size: 14px;
+				opacity: 0;
+				transition: opacity .5s;
+			}
+
+			.box1:hover .text1,
+			.box2:hover .text2,
+			.box3:hover .text3,
+			.box4:hover .text4,
+			.box5:hover .text5,
+			.box6:hover .text6 {
+				transform: translateY(0);
+			}
+
+			.box1:hover .card_description,
+			.box2:hover .card2_description,
+			.box3:hover .card3_description,
+			.box4:hover .card4_description,
+			.box5:hover .card5_description,
+			.box6:hover .card6_description {
+				opacity: 1;
+				transition-delay: .25s;
+			}
+
+			.foot {
+				width: 65%;
+				height: 200px;
+				margin: 100px auto 50px;
+				background: #ffffffa5;
+			}
+
+			.log {
+				line-height: 50px;
+				font-family: myFirstFont;
+			}
+
+			.logg {
+				width: 50px;
+				height: 50px;
+			}
+
+			a:link {
+				text-decoration: none;
+			}
+
+			.foot-logo {
+				width: 200px;
+				height: 200px;
+			}
+
+			.foot-1 {
+				padding-left: 50px;
+				padding-top: 40px;
+			}
+
+			.foot-p {
+				padding-left: 55px;
+				padding-top: 15px;
+				font-family: myFirstFont;
+			}
+
+			.foot-p2 {
+				padding-left: 55px;
+				font-family: myFirstFont;
+			}
+
+			.arrow {
+				border: 9px solid transparent;
+				border-bottom-color: #3DA0DB;
+				width: 0px;
+				height: 0px;
+				top: 0px
+			}
+
+			.stick {
+				width: 8px;
+				height: 14px;
+				border-radius: 1px;
+				background-color: #3DA0DB;
+				top: 15px;
+			}
+
+			#back_top div {
+				position: absolute;
+				margin: auto;
+				right: 0px;
+				left: 0px;
+			}
+
+			#back_top {
+				background-color: #dddddd;
+				height: 38px;
+				width: 38px;
+				border-radius: 3px;
+				display: block;
+				cursor: pointer;
+				position: fixed;
+				right: 50px;
+				bottom: 100px;
+				display: none;
+				border-radius: 20px;
+			}
+
+			@font-face {
+				font-family: myFirstFont;
+				src: url('汇文明朝体.TTF');
+			}
+
+			@font-face {
+				font-family: mySecondFont;
+				src: url('三极行楷简体-粗.TTF');
+			}
+
+			h2,
+			h3 {
+				font-family: myFirstFont;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div style="width: 100%;height: 50px;background: rgba(247, 247, 247, 0.744);">
+			<div style="float: left;width: 50px;height: 50px;"><img src="img2\logo.png" class="logg"></div>
+			<div style="float: left;">
+				<h6 class="log">陶情瓷艺</h6>
+			</div>
+			<div style="float:right;margin-right: 40px;"><a href="../首页/index.html" style="color: #131313;">
+					<h6 class="log">返回首页</h6>
+				</a></div>
+		</div>
+<div class="width-max" style="max-width:1500px; margin:0 auto;min-width:1400px;">
+		<br><br><br>
+		<div>
+			<div class="head" align="center">
+				<h2>品种功能</h2>
+			</div>
+			<div id="demo" class="margin-atuo carousel slide" data-bs-ride="carousel"
+				style="width: 65%;height: 400px;box-shadow: 15px 14px 10px#849070;">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+					<button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+					<button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+					<button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+					<button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+					<button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<a
+							href="https://baike.baidu.com/item/%E9%9D%92%E8%8A%B1%E7%93%B7/9?fr=ge_ala">
+							<img src="./img2/lunbo1.jpg" class="d-block"
+								title="青花瓷" style="width:100%;height: 400px;">
+						</a>
+					</div>
+					<div class="carousel-item">
+						<a
+							href="https://baike.baidu.com/item/%E7%B2%89%E5%BD%A9%E7%93%B7?fromModule=lemma_search-box">
+							<img src="./img2/lunbo2.jpg"
+								class="d-block" title="粉彩瓷" style="width:100%;height: 400px;">
+						</a>
+					</div>
+					<div class="carousel-item">
+						<a
+							href="https://baike.baidu.com/item/%E6%96%97%E5%BD%A9%E7%93%B7/1689941?fr=ge_ala">
+							<img src="./img2/lunbo3.jpg"
+								class="d-block" title="斗彩瓷" style="width:100%;height: 400px;">
+						</a>
+					</div>
+					<div class="carousel-item">
+						<a
+							href="https://baike.baidu.com/item/%E9%A2%9C%E8%89%B2%E9%87%89%E7%93%B7/8103568">
+							<img src="./img2/lunbo4.jpg"
+								class="d-block" title="颜色釉瓷" style="width:100%;height: 400px;">
+						</a>
+					</div>
+					<div class="carousel-item">
+						<a
+							href="https://baike.baidu.com/item/%E7%8F%90%E7%90%85%E5%BD%A9%E7%93%B7?fromModule=lemma_search-box">
+							<img src="./img2/lunbo5.jpg"
+								class="d-block" title="珐琅彩瓷" style="width:100%;height: 400px;">
+						</a>
+					</div>
+					<div class="carousel-item">
+						<a
+							href="https://baike.baidu.com/item/%E9%9B%95%E5%A1%91%E7%93%B7?fromModule=lemma_search-box">
+							<img src="./img2/lunbo6.jpg"
+								class="d-block" title="雕塑瓷" style="width:100%;height: 400px;">
+						</a>
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+					<span class="carousel-control-next-icon"></span>
+				</button>
+			</div>
+			<br><br><br>
+			<div style="width: 65%;margin: 0 auto;">
+				<h3>陶瓷的分类</h3>
+			</div>
+			<br>
+			<div class="qianti">
+				<main>
+					<blockquote>
+						陶瓷可以分为陶和瓷两大类。陶是以粘性较高、可塑性较强的粘土为主要原料制成的，不透明、
+						有细微气孔和微弱的吸水性，击之声浊。而瓷则是以粘土、长石和石英制成，半透明，不吸水、抗腐蚀，胎质坚硬紧密，叩之声脆。
+						<br><br>
+						陶瓷可分为被称为“景德镇九大瓷”的青花瓷、粉彩瓷、斗彩瓷、颜色釉瓷、珐琅彩瓷、变色釉瓷、古彩瓷、新彩瓷以及雕塑瓷等。
+						<br><br>
+						如今，我国的陶瓷品种繁多，当我们进行陶瓷欣赏或是进入陶瓷店时，总是会因为绚丽缤纷、五花八门、琳琅满目的各种陶瓷看得眼花缭乱，
+						同时还会被它们神秘而奇特的名称所深深吸引。但是面对如此众多的各类陶瓷，如果不进行一个系统的归类，就会显得杂乱无章，同时为消费者的购买和挑选带来更大的困难。
+						对陶瓷进行归类能够更好地满足消费者的需求，更好地为消费者提供个性化的购物体验。
+						<br><br>
+						陶瓷品种各具特色，无论是从制作工艺、历史价值还是艺术价值上，都有着独特的魅力和深厚的文化底蕴。
+						满足了人们的日常生活需求，又展现了陶瓷艺术的独特魅力，同时还在工业领域发挥着重要的作用。	
+					</blockquote>
+				</main>
+			</div>
+			<br><br><br>
+			<div style="width: 65%;margin: 0 auto;">
+				<div style="height: 350px;">
+					<div class="box1" style="width:30%;float:left;">
+						<div class="imgg">
+							<img src="./img2/青花瓷.jpg" class="img1" >
+						</div>
+						<div class="text1">
+							<span class="text1_title">青花瓷</span>
+							<span class="card_subtitle">代表：花鱼藻纹十棱菱口大碗、青花压手杯、青花菊心杯、青花海水云龙纹高足杯、青花枇杷绶带鸟纹大盘、青花云龙纹大罐等。</span>
+							<p class="card_description">
+								使用含氧化钴的钴矿为原料，在陶瓷坯体上描绘纹饰，再罩上一层透明釉，经高温还原焰一次烧成。烧成后的钴料呈蓝色，具有着色力强、发色鲜艳、烧成率高、呈色稳定的特点。
+								<br>
+								被誉为“人间瑰宝”，以其幽雅的色彩和细腻的画风深受人们喜爱。
+							</p>
+						</div>
+					</div>
+					<div class="box5" style="width:30%;float:left;margin: 0 5%;">
+						<div class="imgg">
+							<img src="./img2/粉彩瓷.webp" class="img5">
+						</div>
+						<div class="text5">
+							<span class="text5_title">粉彩瓷</span>
+							<span class="card5_subtitle">代表：瑚红地粉彩牡丹纹贯耳穿带瓶、粉彩加金莲花纹盖碗、百鸟朝凤、富贵白头等。</span>
+							<p class="card5_description">
+								粉彩瓷的制作过程是在烧好的胎釉上施含砷物的粉底，涂上颜料后用笔洗开，由于砷的乳蚀作用颜色产生粉化效果。具有颜色柔和、皴染层次多的特点。
+								<br>
+								以其精美的工艺、独特的艺术风格和历史价值，成为了中国传统陶瓷艺术中的重要组成部分。
+							</p>
+							<br>
+						</div>
+					</div>
+					<div class="box6" style="width:30%;float:right;">
+						<div class="imgg">
+							<img src="./img2/斗彩瓷.webp" class="img6">
+						</div>
+						<div class="text6">
+							<span class="text6_title">斗彩瓷</span>
+							<span class="card6_subtitle">代表：彩瑞莲福至心灵水盂、斗彩团花纹洗、斗彩鸡缸杯、彩缠枝莲纹瓜棱式小瓶等。</span>
+							<p class="card6_description">
+								斗彩瓷是一种以斗彩为主要装饰手法的瓷器品种，其特点是将釉下青花和釉上五彩相结合，一同装饰于同一件瓷器面上，形成釉下青花与釉上五彩相互争奇斗艳的艺术表现力。
+								<br>
+								被誉为“青花斗彩，璀璨夺目”。
+							</p>
+							<br>
+						</div>
+					</div>
+				</div>
+				<div style="height:350px;">
+					<div class="box3" style="width:30%;float:left;">
+						<div class="imgg">
+							<img src="./img2/颜色釉瓷.webp" class="img3">
+						</div>
+						<div class="text3">
+							<span class="text3_title">颜色釉瓷</span>
+							<span class="card3_subtitle">代表：天蓝釉刻菊花纹长颈瓶、郎窑红釉观音尊、钧窑玫瑰紫海棠式花盆等。</span>
+							<p class="card3_description">
+								是指在釉中掺入不同金属氧化物和天然矿石为着色剂，施在瓷器的胚胎上，再将胚胎高温焙烧，烧成后呈现不同颜色的瓷器。
+								<br>
+								釉色可谓五彩缤纷，晶莹夺目，被誉之为人造宝石，是瓷都四大传统名瓷之一。
+							</p>
+							&nbsp;
+						</div>
+					</div>
+					<div class="box2" style="width:30%;float:left;margin: 0 5%;">
+						<div class="imgg">
+							<img src="./img2/珐琅彩瓷.jpg" class="img2">
+						</div>
+						<div class="text2">
+							<span class="text2_title">珐琅彩瓷</span>
+							<span class="card2_subtitle">代表：清乾隆珐琅彩花卉纹蒜头瓶、珐琅彩胭脂红地梅竹纹酒圆、八卦玲珑旋转笔筒等。</span>
+							<p class="card2_description">
+								珐琅彩瓷的装饰手法源于画珐琅技法，即将画珐琅技法移植到瓷胎上的一种釉上彩装饰手法。珐琅彩瓷的特点是色彩控制准确，画面有立体感，工巧精细，华贵富丽。
+								<br>
+								被誉为“瓷中之王,成为了中国传统陶瓷艺术中的珍品。
+							</p>
+							<br>&nbsp;
+						</div>
+					</div>
+					<div class="box4" style="width:30%;float:right;">
+						<div class="imgg">
+							<img src="./img2/雕塑瓷.webp" class="img4">
+						</div>
+						<div class="text4">
+							<span class="text4_title">雕塑瓷</span>
+							<span class="card4_subtitle">代表：贵妃醉酒、观音菩萨、十二生肖、紫砂壶、嫦娥奔月等。</span>
+							<p class="card4_description">
+								是通过雕塑工艺制作并烧制而成的立体陶瓷艺术品。其制作过程包括模印、镂嵌以及多道手工工艺如堆、塑、雕刻等，再经过高温烧炼才能完成。
+								<br>
+								以造型别致、工艺精湛著称，被誉为“立体的画，无声的诗”。
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br><br>
+			<div style="width: 65%;margin: 0 auto;">
+				<h3>陶瓷的功能及用途</h3>
+			</div>
+			<br>
+			<div>
+				<main>
+					<blockquote>
+						陶瓷作为一种古老而多功能的材料，具有广泛的应用范围，它们以其独特的质感和美感，深深地融入了人们的日常生活、艺术创作和工业制造中。<br><br>
+						<h5><b>陶瓷的功能：</b></h5>
+						1.装饰与美化：陶瓷因其质地细腻、色彩丰富，常被用于装饰和美化环境。它可以作为艺术品摆件，也可以作为家居装饰品，为生活空间增添艺术气息。<br>
+                        2.实用与功能性：陶瓷具有良好的耐用性、防水性和化学稳定性，因此被广泛用于各种实用器具的制作，如餐具、茶具、水器等。<br>
+						3.隔热与保温：陶瓷材料具有良好的热稳定性，可以作为隔热材料使用，如陶瓷纤维、陶瓷板等，也可以作为保温材料，如保温瓶、保温罐等。
+						<br><br>
+						陶瓷的用途广泛，几乎涵盖了生活的各个方面。以下是一些<b>常见的陶瓷用途：</b><br>
+						1.餐饮与烹饪：陶瓷碗、盘、杯、壶等是餐饮和烹饪中不可或缺的工具，它们不仅美观，而且易于清洁。<br>
+						2.艺术与收藏：陶瓷艺术品如塑、摆件、花瓶等，具有很高的艺术价值和收藏价值，是艺术爱好者的喜爱之物。<br>
+						3.建筑与装饰：陶瓷砖、瓦、壁画等广泛用于建筑外墙、地面、屋顶等装饰，具有美观、耐用、防水等特点。
+						<br><br>
+						<h5><b>日常生活中的应用：</b></h5>
+						1.餐饮器具：陶瓷餐具是最常见的日用品之一，包括碗、盘、杯、壶等，它们不仅实用，而且可以通过精美的装饰和设计，提升餐桌的艺术气息。<br>
+                        2.家居装饰：陶瓷花瓶、装饰盘、雕塑等是家居装饰的重要元素，可以为空间增添艺术氛围。<br>
+						3.卫生用品：如卫生间的瓷砖、洗脸盆、浴缸等，陶瓷的防水、易清洁的特性使其在这些场合得到广泛应用。
+						<br><br>
+						<h5><b>艺术领域的应用：</b></h5>
+						1.陶瓷艺术：陶瓷艺术家通过精湛的手艺和独特的创意，制作出各种精美的陶瓷艺术品，如人物雕塑、器皿、壁画等，具有很高的观赏和收藏价值。<br>
+						2.绘画和装饰：陶瓷可以作为绘画和装饰的载体，艺术家可以在陶瓷表面进行绘画、釉上彩、釉下彩等装饰手法，创作出富有特色的艺术作品。
+						<br><br>
+						<h5><b>工业领域的应用：</b></h5>
+						1.建筑行业：陶瓷在建筑行业中有着广泛的应用，如外墙瓷砖、地板砖、屋顶瓦等，它们不仅美观耐用，而且具有良好的防水、防火性能。<br>
+						2.化工和环保：陶瓷材料在化工和环保领域也有重要的应用，如陶瓷膜可以用于液体和气体的过滤和分离，陶瓷催化剂可以用于化学反应的加速等。<br>
+						3.电子行业：陶瓷在电子行业中被用作绝缘材料、电容器、电感器等元件的制造，具有优异的电学性能和稳定性。
+						<br><br>
+						总之，陶瓷作为一种古老而多功能的材料，在日常生活、艺术和工业中都有着广泛的应用。随着科技的进步和人们审美观念的提高，陶瓷的应用领域还将不断扩大，为人类的生活和发展做出更大的贡献。
+						<br><br>
+						</em>
+					</blockquote>
+				</main>
+			</div>
+			<div class="foot">
+				<div style="float: left;padding-left: 100px;">
+					<img src="img2\logo.png" class="foot-logo">
+				</div>
+				<div style="float:left;padding-left: 180px;">
+					<h3 class="foot-1"><b>陶情瓷艺</b></h3>
+					<div style="float: left;">
+						<a href="##" style="color: #131313;">
+							<p class="foot-p">联系我们</p>
+						</a>
+						<a href="##" style="color: #131313;">
+							<p class="foot-p2">帮助中心</p>
+						</a>
+					</div>
+					<div style="float: left;">
+						<a href="##" style="color: #131313;">
+							<p class="foot-p">投诉中心</p>
+						</a>
+						<a href="##" style="color: #131313;">
+							<p class="foot-p2">空间协议</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="back_top">
+			<div class="arrow"></div>
+			<div class="stick"></div>
+		</div>
+		<script>
+			$(function() {
+				$(window).scroll(function() {
+					var scrollt = document.documentElement.scrollTop + document.body.scrollTop;
+					if (scrollt > 200) {
+						$("#back_top").fadeIn(400);
+					} else {
+						$("#back_top").stop().fadeOut(400);
+					}
+				});
+				$("#back_top").click(function() {
+					$("html,body").animate({
+						scrollTop: "0px"
+					}, 200);
+				});
+			});
+		</script>
+</div>
+	</body>
+</html>
